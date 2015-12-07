@@ -9,8 +9,8 @@ var Eso = {
     EsoHeight = $(window).height();
     $(window).resize(Eso.resizeHandler);
     $(window).load(Eso.resizeHandler);
-    $(window).scroll(Eso.scrollHandler);
-    $('body').css('border', '2px solid purple');
+    $(window).on('scroll', Eso.scrollHandler);
+
     $('#shuffle > div').click(function () {
       Eso.shuffle();
       $(this).addClass('magnify');
@@ -33,4 +33,16 @@ var Eso = {
     }
   },
 
+  scrollHandler: function() {
+    var mainNavHeight = $('header').outerHeight();
+    var windowHeight = $(window).outerHeight();
+    var visibleWindowHeight = parseInt(windowHeight-mainNavHeight);
+
+
+    var sectionOneOff = $('.one').scrollTop() - visibleWindowHeight;
+    var sectionTwo = $('.two').offset().top;
+
+    console.log(sectionOneOff);
+
+  },
 }

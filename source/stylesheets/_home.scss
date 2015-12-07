@@ -1,5 +1,11 @@
 @import "mix";
-
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: aquamarine;
+  }
+}
 .esoesoeso {
   border: 2px solid aquamarine;
   display: flex;

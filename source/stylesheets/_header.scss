@@ -1,0 +1,25 @@
+@import "mix";
+html,
+body {
+overflow: hidden;
+overflow-y: auto;
+}
+header {
+  font-family: "fira-sans";
+  color: #fff;
+  letter-spacing: .2em;
+  background: rgba(220, 183, 255, .5);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100%;
+
+  span {
+    font-size: .75em;
+    text-transform: uppercase;
+    width: 50%;
+  }
+}

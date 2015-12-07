@@ -6,9 +6,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
   <title><%= current_page.data.title || "Erica Eso" %></title>
   <%= stylesheet_link_tag "application" %>
+  <script src="//use.typekit.net/yuo6xhc.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="<%= page_classes %>">
+<header class="soundcloud">
+  <span>
+    <h1><span>ERICA ESO</span><br/><span class="disclaimer">debut album 2019
+    <br/>on
+    <a target="_blank" href="https://www.facebook.com/Ramp-Local-1573601239579420/timeline/">Ramp Local Records</a></span></h1>
+  </span>
+  <span>
+    <iframe width="100%" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217076591&amp;color=dcb7ff&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+  </span>
+</header>
   <%= yield %>
   <script src="javascripts/vendor/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
