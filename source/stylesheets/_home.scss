@@ -6,6 +6,7 @@ a {
     color: aquamarine;
   }
 }
+
 .esoesoeso {
   border: 2px solid aquamarine;
   display: flex;
@@ -15,4 +16,69 @@ a {
 .content {
   width: 100%;
   text-align: center;
+}
+
+.dates {
+  ul {
+    border: 1px dashed aquamarine;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-family: "fira-sans";
+    justify-content: space-between;
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    li a {
+      color: mediumpurple;
+      &:hover {
+        color: aquamarine;
+      }
+    }
+
+    li:first-child, li:last-child {
+      width: 20%;
+    }
+  }
+}
+
+.lyric-grid {
+  background: url('../images/large-grid-pink.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  #shuffle {
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 60px 0 60px 0;
+    width: 100%;
+    overflow: hidden;
+    @include clearfix;
+    @include box-sizing;
+    &>div {
+      color: #000;
+      padding: 20px 10px;
+      float: left;
+      font-size: .6875em;
+      width: 25%;
+      text-align: center;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transition: all .25s;
+      transition: all .25s;
+      @include box-sizing;
+      &:hover {font-size: .73em;font-weight: bold;}
+      &.magnify {color: #46FFD0;font-weight: bold;font-size: 1.2em;}
+      &.turn {-ms-transform: rotate(90deg);-webkit-transform: rotate(90deg);transform: rotate(90deg);}
+      &.tilt {color: #9D0AFF;-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}
+      &.back {color: #9D0AFF;-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
+    }
+  }
 }

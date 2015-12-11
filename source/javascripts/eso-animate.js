@@ -15,6 +15,8 @@ var Eso = {
       Eso.shuffle();
       $(this).addClass('magnify');
     });
+
+    window.sr = new scrollReveal();
   },
 
   resizeHandler: function() {
@@ -31,18 +33,5 @@ var Eso = {
     while (divs.length) {
       parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
     }
-  },
-
-  scrollHandler: function() {
-    var mainNavHeight = $('header').outerHeight();
-    var windowHeight = $(window).outerHeight();
-    var visibleWindowHeight = parseInt(windowHeight-mainNavHeight);
-
-
-    var sectionOneOff = $('.one').scrollTop() - visibleWindowHeight;
-    var sectionTwo = $('.two').offset().top;
-
-    console.log(sectionOneOff);
-
-  },
+  }
 }
