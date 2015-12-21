@@ -11,6 +11,8 @@ header {
   background: rgba(220, 183, 255, .5);
   position: fixed;
   top: 0;
+  font-size: .75em;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,8 +20,9 @@ header {
   width: 100%;
 
   span {
-    font-size: .75em;
-    text-transform: uppercase;
     width: 50%;
+    &.show-header, &.secondary {
+      display: none;
+    }
   }
 }

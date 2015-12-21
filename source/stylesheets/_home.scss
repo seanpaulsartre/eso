@@ -82,3 +82,116 @@ a {
     }
   }
 }
+
+.press-button, .purchase-button {
+
+}
+.purchase-button {
+  position: fixed;
+  overflow: hidden;
+  right: 10px;
+  border: 4px solid aquamarine;
+}
+
+.press-button {
+  position: fixed;
+  overflow: hidden;
+  bottom: 0px;
+  left: 40px;
+  width: 110px;
+  height: 110px;
+  border: 4px solid hotpink;
+  border-radius: 50%;
+  &:hover {
+    background-color: hotpink;
+    a {
+      color: #fff;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: hotpink;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    letter-spacing: .2em;
+    top: 40%;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+}
+
+.press {
+  background-color: rgba(255,255,255,1);
+  padding: 30px;
+  position: relative;
+
+  h1 {
+    color: #000;
+    letter-spacing: 20px;
+  }
+
+  a {
+    color: mediumslateblue;
+    text-transform: uppercase;
+    font-size: 1.875em;
+    margin-top: 80px;
+    letter-spacing: .09em;
+    display: block;
+    &:hover {
+      color: aquamarine;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  p {
+    color: #000;
+    font-size: 1.25em;
+    font-weight: 600;
+
+    &.podcast {
+      cursor: pointer;
+      background-color: #fff;
+      padding: 20px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      max-width: 300px;
+    }
+
+    &.read-more {
+      cursor: pointer;
+      letter-spacing: .2em;
+      font-weight: 400;
+      &:hover {
+        color: mediumpurple;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    text-align: left;
+    display: none;
+  }
+
+  ul li {
+    color: #000;
+    font-size: .9em;
+    margin-bottom: 20px;
+  }
+
+  span {
+    display: none;
+    color: #000;
+    margin-bottom: 40px;
+    text-align: right;
+    font-size: .675em;
+  }
+}
