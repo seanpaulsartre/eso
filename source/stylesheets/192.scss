@@ -1,0 +1,29 @@
+@import "mix";
+.esoesoeso.four {
+  background: url('../images/yellow-gradient.jpg') no-repeat center center;
+  position: relative;
+  .social {
+    font-family: "fira-sans";
+    text-transform: uppercase;
+    p {
+      font-weight: 600;
+      letter-spacing: .5em;
+      margin-bottom: 35px;
+    }
+    a {
+      padding: 0 20px;
+      letter-spacing: .2em;
+      display: block;
+      margin-bottom: 15px;
+      &:focus {
+        outline: 0;
+      }
+      @include breakpoint(tablet-desktop) {
+        display: inline-block;
+        &:hover {
+          color: hotpink !important;
+        }
+      }
+    }
+  }
+}

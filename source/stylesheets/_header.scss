@@ -11,18 +11,24 @@ header {
   background: rgba(220, 183, 255, .5);
   position: fixed;
   top: 0;
-  font-size: .75em;
+  font-size: .325em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   width: 100%;
-
+  @include breakpoint(tablet-desktop) {
+    font-size: .75em;
+  }
   span {
     width: 50%;
     &.show-header, &.secondary {
       display: none;
     }
+  }
+  .show-header,
+  .secondary {
+    font-size: 1.75em;
   }
 }

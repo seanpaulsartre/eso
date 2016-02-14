@@ -1,6 +1,7 @@
 @import "mix";
+
 .esoesoeso.three {
-  background-color: khaki;
+  background-color: #dcff3c;
   position: relative;
   align-items: flex-start;
 }
@@ -8,10 +9,7 @@
   width: 100%;
   h1 {
     font-size: 2em;
-    color: thistle;
-    @include breakpoint(tablet-desktop) {
-      color: #fff;
-    }
+    color: #fff;
   }
 
   .left {
@@ -58,13 +56,8 @@
 
     iframe, p {
       color: #000;
-      width: 80%;
-      margin: 0 auto;
-      @include breakpoint(tablet-desktop) {
-        width: 60%;
-      }
-
     }
+
     img {
       width: 60%;
       margin: 0 auto;
@@ -73,10 +66,13 @@
         width: 30%;
       }
     }
+
     p {
       margin-top: 20px;
       @include breakpoint(tablet-desktop) {
-        margin-top: 40px;
+        max-width: 650px;
+        line-height: 1.5em;
+        margin: 40px auto;
       }
     }
   }
