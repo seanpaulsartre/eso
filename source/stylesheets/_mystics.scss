@@ -4,6 +4,7 @@
   background-color: #dcff3c;
   position: relative;
   align-items: flex-start;
+  z-index: 999999;
 }
 .mystics {
   width: 100%;
@@ -25,22 +26,24 @@
     position: absolute;
   }
   img {
-    cursor: pointer;
-    width: 25%;
     &:nth-child(odd) {
       &:hover {
-        -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
+        -ms-transform: rotate(45deg)!important;
+        -webkit-transform: rotate(45deg)!important;
+        transform: rotate(45deg)!important;
       }
     }
     &:nth-child(even) {
       &:hover {
-        -ms-transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg)!important;
+        -webkit-transform: rotate(-45deg)!important;
+        transform: rotate(-45deg)!important;
       }
     }
+  }
+  img{
+    cursor: pointer;
+    width: 25%;
   }
   .show {
     display: none;
@@ -69,9 +72,10 @@
 
     p {
       margin-top: 20px;
+      padding: 0 40px;
+      line-height: 1.5em;
       @include breakpoint(tablet-desktop) {
         max-width: 650px;
-        line-height: 1.5em;
         margin: 40px auto;
       }
     }

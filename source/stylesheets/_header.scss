@@ -18,6 +18,7 @@ header {
   justify-content: space-between;
   padding: 0 20px;
   width: 100%;
+  z-index: 999;
   @include breakpoint(tablet-desktop) {
     font-size: .75em;
   }

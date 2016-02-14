@@ -139,7 +139,7 @@ a {
   display: none;
   position: fixed;
   overflow: hidden;
-  bottom: 0px;
+  top: 100px;
   left: 40px;
   width: 110px;
   height: 110px;
@@ -175,19 +175,30 @@ a {
   background-color: rgba(255,255,255,1);
   padding: 30px;
   position: relative;
+  z-index: 9999999;
+  @include breakpoint(tablet-desktop) {
+    padding: 30px 180px;
+  }
 
   h1 {
     color: #000;
     letter-spacing: 20px;
+    font-size: 2em;
+    @include breakpoint(tablet-desktop) {
+      font-size: 3em;
+    }
   }
 
   a {
     color: mediumslateblue;
     text-transform: uppercase;
-    font-size: 1.875em;
+    font-size: 1.5em;
     margin-top: 80px;
     letter-spacing: .09em;
     display: block;
+    @include breakpoint(tablet-desktop) {
+      font-size: 1.876em;
+    }
     &:hover {
       color: aquamarine;
     }
@@ -198,9 +209,11 @@ a {
 
   p {
     color: #000;
-    font-size: 1.25em;
+    font-size: .75em;
     font-weight: 600;
-
+    @include breakpoint(tablet-desktop) {
+      font-size: 1.25em;
+    }
     &.podcast {
       cursor: pointer;
       background-color: #fff;
@@ -212,6 +225,7 @@ a {
 
     &.read-more {
       cursor: pointer;
+      font-size: .625em;
       letter-spacing: .2em;
       font-weight: 400;
       &:hover {
