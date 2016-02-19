@@ -8,39 +8,37 @@ var Eso = {
     EsoWidth = $(window).width();
     EsoHeight = $(window).height();
     $(window).resize(Eso.resizeHandler);
-    $(window).load(Eso.resizeHandler);
-    $(window).on('scroll', Eso.scrollHandler);
+    $(window).on('scroll', Eso.scrollAnimations);
+    window.sr = new scrollReveal();
+    Eso.fillBrowser();
+    $('[data-behavior="show-mystic-content"]').on('click', Eso.showMystics);
+
+    $('[data-behavior="read-more"]').on('click', function() {
+      $(this).next('ul').velocity('slideDown', { duration: 200 });
+      $(this).hide();
+    });
 
     $('#shuffle > div').click(function () {
       Eso.shuffle();
+
       $(this).addClass('magnify');
-    });
-
-    window.sr = new scrollReveal();
-
-    $('[data-behavior="show-bell"]').on('click', function() {
-      $('.show').hide();
-      $('.show.bell').show();
-    });
-    $('[data-behavior="show-judith"]').on('click', function() {
-      $('.show').hide();
-      $('.show.judith').show();
-    });
-    $('[data-behavior="show-randy"]').on('click', function() {
-      $('.show').hide();
-      $('.show.randy').show();
-    });
-    $('[data-behavior="show-iris"]').on('click', function() {
-      $('.show').hide();
-      $('.show.iris').show();
-    });
-    $('[data-behavior="read-more"]').on('click', function() {
-      $(this).next('ul').show();
-      $(this).hide();
     });
   },
 
-  resizeHandler: function() {
+  showMystics: function() {
+    $('.show').hide();
+    if ($(this).data("name") === 'bell') {
+      $('.bell').velocity('fadeIn', { duration: 500 });
+    } else if ($(this).data("name") === 'judith') {
+      $('.judith').velocity('fadeIn', { duration: 500 });
+    } else if ($(this).data("name") === 'randy') {
+      $('.randy').velocity('fadeIn', { duration: 500 });
+    } else {
+      $('.iris').velocity('fadeIn', { duration: 500 });
+    }
+  },
+
+  fillBrowser: function() {
     EsoWidth = $(window).width();
     EsoHeight = $(window).height();
 
@@ -48,33 +46,34 @@ var Eso = {
     module.css('height', EsoHeight);
   },
 
-  scrollHandler: function() {
+  resizeHandler: function() {
+    Eso.fillBrowser();
+  },
+
+  scrollAnimations: function() {
     var dates = $('.dates').offset().top - 200,
     lyricGrid = $('.lyric-grid').offset().top,
-    top = $(window);
+    esoWindow = $(window);
 
-    if (top.scrollTop() >= dates ) {
-      $('.main-header').hide();
+    if (esoWindow.scrollTop() >= dates ) {
+      $('.main-header, .secondary').hide();
       $('.show-header').show();
-      $('.secondary').hide();
     } else {
       $('.main-header').show();
-      $('.show-header').hide();
-      $('.secondary').hide();
+      $('.show-header, .secondary').hide();
     }
 
-    if (top.scrollTop() >= lyricGrid ) {
+    if (esoWindow.scrollTop() >= lyricGrid ) {
       $('.secondary').show();
-      $('.main-header').hide();
-      $('.show-header').hide();
+      $('.main-header, .show-header').hide();
     }
   },
 
   shuffle: function () {
     var parent = $("#shuffle");
     var divs = parent.children();
-    while (divs.length) {
-      parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-    }
+    do {
+      parent.append(divs.splice(Math.floor(Math.random() * divs.length)));
+    } while (divs.length);
   }
 }

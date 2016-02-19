@@ -1,9 +1,11 @@
 @import "mix";
+
 html,
 body {
-overflow: hidden;
-overflow-y: auto;
+  overflow: hidden;
+  overflow-y: auto;
 }
+
 header {
   font-family: "fira-sans";
   color: #fff;
@@ -22,12 +24,14 @@ header {
   @include breakpoint(tablet-desktop) {
     font-size: .75em;
   }
+
   span {
     width: 50%;
     &.show-header, &.secondary {
       display: none;
     }
   }
+  
   .show-header,
   .secondary {
     font-size: 1.75em;
