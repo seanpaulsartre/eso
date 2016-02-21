@@ -2,7 +2,7 @@
 .esoesoeso.four {
   background: url('../images/yellow-gradient.jpg') no-repeat center center;
   position: relative;
-
+  z-index: 999999;
   .social {
     font-family: "fira-sans";
     text-transform: uppercase;
@@ -25,7 +25,7 @@
 
       @include breakpoint(tablet-desktop) {
         display: inline-block;
-        
+
         &:hover {
           color: hotpink !important;
         }

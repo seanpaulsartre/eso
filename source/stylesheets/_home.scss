@@ -20,6 +20,22 @@ a {
   text-align: center;
 }
 
+.arrow {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  color: #000;
+  border: 3px solid #000;
+  padding: 20px;
+  right: 5px;
+  bottom: 5px;
+  z-index: 99999999;
+  &:hover {
+    border-color: mediumpurple;
+    color: mediumpurple;
+  }
+}
+
 .video-wrapper {
   max-width: 700px;
   margin: 0 auto;
@@ -209,9 +225,8 @@ a {
   font-weight: 100;
   padding: 30px;
   position: relative;
-  z-index: 9999999;
   @include breakpoint(tablet-desktop) {
-    padding: 30px 180px;
+    padding: 190px 180px;
   }
 
   h1 {

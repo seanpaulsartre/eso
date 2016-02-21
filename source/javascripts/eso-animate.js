@@ -21,6 +21,9 @@ var Eso = {
       $(this).next('ul').velocity('slideDown', { duration: 200 });
       $(this).hide();
     });
+    $('[data-behavior="scroll-to-top"]').on('click', function() {
+      Eso.scrollToEl('.one');
+    });
     $('[data-behavior="scroll-to-follo"]').on('click', function() {
       Eso.scrollToEl('.four');
     });
@@ -35,7 +38,7 @@ var Eso = {
   },
 
   scrollToEl: function(element) {
-    $(element).velocity("scroll", { duration: 4600});
+    $(element).velocity("scroll", { duration: 1000});
   },
 
   showMystics: function() {
@@ -71,12 +74,17 @@ var Eso = {
     if (esoWindow.scrollTop() >= dates ) {
       $('.main-header, .secondary').hide();
       $('.show-header').show();
+      $('header').addClass('light');
+      $('.arrow').show();
     } else {
+      $('.arrow').hide();
+      $('header').removeClass('light');
       $('.main-header').show();
       $('.show-header, .secondary').hide();
     }
 
     if (esoWindow.scrollTop() >= lyricGrid ) {
+      $('.arrow').show();
       $('.secondary').show();
       $('header').addClass('light');
       $('.main-header, .show-header').hide();
