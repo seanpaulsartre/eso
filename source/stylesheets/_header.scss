@@ -10,7 +10,7 @@ header {
   font-family: "fira-sans";
   color: #fff;
   letter-spacing: .2em;
-  background: rgba(220, 183, 255, .5);
+  // background: rgba(220, 183, 255, .5);
   position: fixed;
   top: 0;
   font-size: .325em;
@@ -31,9 +31,14 @@ header {
       display: none;
     }
   }
-  
+
   .show-header,
   .secondary {
     font-size: 1.75em;
+  }
+
+  &.light {
+    color: rgba(220, 183, 255, 1);
+    background: rgba(255,255,255, .8);
   }
 }

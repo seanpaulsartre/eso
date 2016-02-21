@@ -133,17 +133,19 @@ a {
   @include breakpoint(tablet-desktop) {
     display: block;
     &:hover {
-      color: #4587ff;
+      background-color: aquamarine;
+      color: #fff;
     }
   }
 }
 
 .press-button {
+  cursor: pointer;
   display: none;
   position: fixed;
   overflow: hidden;
   top: 100px;
-  left: 40px;
+  left: 12%;
   width: 110px;
   height: 110px;
   border: 4px solid #4587ff;
@@ -176,8 +178,32 @@ a {
   }
 }
 
+.follo-button {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 3%;
+  top: 120px;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 140px solid #dcff3c;
+  transform: rotate(-30deg);
+  &:hover {
+    border-top-color: #46FFD0;
+  }
+  span {
+    position: relative;
+    top: -110px;
+    left: -32px;
+    color: #000;
+  }
+}
+
 .press {
   background-color: rgba(255,255,255,1);
+  font-family: "fira-sans";
+  font-weight: 100;
   padding: 30px;
   position: relative;
   z-index: 9999999;
@@ -186,11 +212,16 @@ a {
   }
 
   h1 {
+    border-bottom: 3px dashed #dcff3c;
+    padding-bottom: 35px;
     color: #000;
-    letter-spacing: 20px;
+    letter-spacing: 15px;
     font-size: 2em;
+    font-family: "fira-sans";
+    font-weight: 100;
+    width: 100%;
     @include breakpoint(tablet-desktop) {
-      font-size: 3em;
+      font-size: 3.25em;
     }
   }
 
@@ -215,7 +246,8 @@ a {
   p {
     color: #000;
     font-size: .75em;
-    font-weight: 600;
+    font-family: "fira-sans";
+    font-weight: 400;
     @include breakpoint(tablet-desktop) {
       font-size: 1.25em;
     }

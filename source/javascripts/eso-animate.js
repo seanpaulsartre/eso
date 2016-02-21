@@ -17,12 +17,21 @@ var Eso = {
       $(this).next('ul').velocity('slideDown', { duration: 200 });
       $(this).hide();
     });
-
+    $('[data-behavior="scroll-to-follo"]').on('click', function() {
+      Eso.scrollToEl('.four');
+    });
+    $('[data-behavior="scroll-to-press"]').on('click', function() {
+      Eso.scrollToEl('.press');
+    });
     $('#shuffle > div').click(function () {
       Eso.shuffle();
 
       $(this).addClass('magnify');
     });
+  },
+
+  scrollToEl: function(element) {
+    $(element).velocity("scroll", { duration: 4600});
   },
 
   showMystics: function() {
@@ -65,6 +74,7 @@ var Eso = {
 
     if (esoWindow.scrollTop() >= lyricGrid ) {
       $('.secondary').show();
+      $('header').addClass('light');
       $('.main-header, .show-header').hide();
     }
   },
