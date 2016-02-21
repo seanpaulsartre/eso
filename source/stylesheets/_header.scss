@@ -8,9 +8,8 @@ body {
 
 header {
   font-family: "fira-sans";
-  color: #fff;
+  color: rgba(220, 183, 255, 1);
   letter-spacing: .2em;
-  // background: rgba(220, 183, 255, .5);
   position: fixed;
   top: 0;
   font-size: .325em;
@@ -38,7 +37,6 @@ header {
   }
 
   &.light {
-    color: rgba(220, 183, 255, 1);
     background: rgba(255,255,255, .8);
   }
 }

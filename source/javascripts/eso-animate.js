@@ -5,6 +5,10 @@ var Eso = {
   },
 
   bind: function() {
+    $(window).load(function() {
+      $("#preload").velocity('fadeOut', { duration: 1000 });
+    });
+
     EsoWidth = $(window).width();
     EsoHeight = $(window).height();
     $(window).resize(Eso.resizeHandler);
