@@ -203,11 +203,15 @@ a {
   height: 0;
   position: absolute;
   left: 3%;
-  top: 120px;
+  top: 250px;
   border-left: 70px solid transparent;
   border-right: 70px solid transparent;
   border-top: 140px solid #dcff3c;
   transform: rotate(-30deg);
+
+  @include breakpoint(tablet-desktop) {
+    top: 120px;
+  }
   &:hover {
     border-top-color: #46FFD0;
   }
